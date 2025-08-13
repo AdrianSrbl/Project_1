@@ -47,7 +47,7 @@
 
 
 ## Business Requirements
-* Analyse salary trends by year, title and location.
+* The project is focused to analyse salary trends and how they vary across year, title and location.
 
 ## Hypothesis and how to validate?
 * List here your project hypothesis(es) and how you envision validating it (them) 
