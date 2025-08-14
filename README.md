@@ -49,60 +49,123 @@
 ## Business Requirements
 * The project is focused to analyse salary trends and how they vary across year, title and location.
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+## Hypothesis and how to validate? 
+* Hypothesis 1: Data science salaries have increased year-over-year from 2020 to 2025.
+   * Validation: Analyze the trend of average salaries by year using line and area plots. Perform statistical tests (e.g., linear regression) to confirm a significant upward trend.
+   
+* Hypothesis 2: Salary levels vary significantly by company size and location.
+   * Validation: Visualize salary distributions by company size and location using box plots, treemaps, and sunburst charts. Use group-by analysis and statistical tests to confirm differences.
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
-* Why did you choose the research methodologies you used?
+* High-level steps taken for the analysis:
+   * Data Collection: Obtained the raw salary dataset covering 2020–2025, including job, salary, and company attributes.
+   * Data Cleaning & Processing: Dropping irrelevant columns.
+   * Exploratory Data Analysis (EDA): Explored distributions, trends, and relationships using summary statistics and visualizations (histograms, box plots, line plots).
+   * Data Visualization: Used Matplotlib, Seaborn, and Plotly to create insightful plots (area, box, treemap, sunburst, scatter matrix) to address business questions and hypotheses.
+  
+* Data management throughout the project:
+   * Collection: Downloaded and documented the source of the dataset: (https://www.kaggle.com/datasets/adilshamim8/salaries-for-data-science-jobs?resource=download&select=salaries.csv)
+   * Processing: Cleaned and transformed the data using Pandas, ensuring consistency and accuracy.
+   * Analysis: Performed EDA and hypothesis testing in Jupyter notebooks for reproducibility.
+   * Interpretation: Documented insights and visualizations in the notebook and README for transparency.
+
+* Rationale for chosen research methodologies:
+   * Used EDA and visualization to quickly identify patterns, trends, and outliers in the data.
+   * Used Jupyter notebooks for an interactive, iterative workflow and clear documentation of the analysis process.
 
 ## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+The main business requirements and their mapping to data visualizations are:
+
+1. **Understand salary trends over time**
+   * Identifying how salaries change year-over-year helps stakeholders make informed decisions about compensation and hiring.
+
+2. **Compare salaries across experience levels and job titles**
+   * Understanding pay differences by role and seniority supports career planning and organizational structuring.
+   
+3. **Explore salary differences by company size and location**
+   * Company size and geography influence compensation; visualizing these factors helps benchmark and strategize.
+   
+4. **Identify overall salary distribution and outliers**
+   * Understanding the spread and anomalies in salary data is crucial for fair pay and risk management.
+   
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
+The main data analysis methods used in this project include:
+
+ **Descriptive statistics**: Used to summarize and describe the main features of the dataset: mean, median, mode, standard deviation.
+ **Data visualization**: Employed a variety of plots (histograms, box plots, line plots, area plots, treemaps, sunburst, scatter matrix) to explore distributions, trends, and relationships.
+Used data visualization tools such as Matplotlib, Seaborn, and Plotly to analyze salary trends and differences across categories: year, experience level, remote ratio, company size, etc.
+
+**Limitations and alternative approaches:**
+ * No limitations were identified that impacted the analysis.
+
+**Structure and justification:**
+- The analysis was structured in a logical, step-by-step manner: data cleaning, EDA, feature engineering, visualization, statistical testing, and interpretation.
+- This approach ensures transparency, reproducibility, and clear mapping from business questions to analytical results.
+- Jupyter notebooks were used to document each step, making it easy to iterate and communicate findings.
+
+**Data limitations and alternative approaches:**
+ * No data limitations were identified that impacted the analysis.
+
+**Use of generative AI tools:**
+- Generative AI such as ChatGPT and Copilot was used for ideation, code optimization, and design thinking.
+- AI tools helped generate code snippets for data cleaning, visualization, and statistical analysis, speeding up development.
+- AI was also used to draft documentation, structure the analysis, and suggest alternative approaches or visualizations.
 
 ## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues? 
+* No data privacy, bias or fairness issues were identified.
+* No legal or societal issues were identified.
 
 ## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+* No unfixed bugs are present in the project.
 
 ## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
-
-## Deployment
-
+* Challenges faced and strategies used:
+   * Visualizing datasets in a way that is both informative and clear.
+   * Visualization libraries with Plotly and created static images for GitHub compatibility.
+   * Used Jupyter notebooks for step-by-step documentation and code execution, and version control with Git.
+   * Exporting interactive plots as static images for sharing and GitHub display.
+   * Integrated Kaleido with Plotly to export static images and embedded them in the notebook. 
 
 ## Main Data Analysis Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+The main data analysis libraries used in this project are:
 
+- **pandas**  
+   For data manipulation and analysis.  
+   - Example: `df = pd.read_csv('dataset/processed/salaries_processed.csv')`
+   - Example: `df.groupby('work_year')['salary_in_usd'].mean()`
 
-## Credits 
+- **numpy**  
+   For numerical operations and array handling.  
+   - Example: `import numpy as np`
+   - Example: `np.mean(df['salary_in_usd'])`
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+- **matplotlib**  
+   For static data visualization.  
+   - Example: `plt.figure(figsize=(10,6))`
+   - Example: `plt.boxplot(df['salary_in_usd'])`
+
+- **seaborn**  
+   For advanced statistical visualizations.  
+   - Example: `sns.histplot(df['salary_in_usd'], kde=True)`
+   - Example: `sns.pairplot(df[['salary_in_usd', 'work_year']])`
+
+- **plotly**  
+   For interactive and advanced visualizations.  
+   - Example: `fig = px.area(df, x='work_year', y='salary_in_usd')`
+   - Example: `fig.write_image('area_plot.png')`
+
+- **kaleido**  
+   For exporting Plotly figures as static images.  
+   - Example: `fig.write_image('plot.png')`
 
 ### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
+* Instructions on how to implement and present the information were adapted from various online resources:
+   - [YouTube](https://www.youtube.com/)
+   - [Wikipedia](https://www.wikipedia.org/)
+   - [ChatGPT](https://chatgpt.com/)
+   - [Code Institute Learning Platform](https://learn.codeinstitute.net/)
+   - [Kaggle](https://www.kaggle.com/)
 
 ## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+* Thanks to Vasi who provided support through this project.
